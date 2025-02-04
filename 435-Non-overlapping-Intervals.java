@@ -1,3 +1,4 @@
+
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
         // Sort intervals based on the end time (not the start time) for optimal removal count
