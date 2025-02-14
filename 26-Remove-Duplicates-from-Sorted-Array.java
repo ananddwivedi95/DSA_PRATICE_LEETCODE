@@ -9,17 +9,12 @@ class Solution {
             if (nums[i] == nums[j]) {
                 j++;
             } else {
-                insert(j, nums, ++index); // Store unique element at index
-                
+                nums[++index]=nums[j]; // Store unique element at index
                 i = j;
                 j++;
                 count++;
             }
         }
         return count;
-    }
-
-    static void insert(int j, int[] nums, int index) {
-        nums[index] = nums[j]; // Store unique element in the correct position
     }
 }
