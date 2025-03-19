@@ -8,9 +8,8 @@ class Solution {
         while(j<arr.length-1)
         {
             if(arr[j]<arr[j+1])
-            {  flag=false;
+            { 
                 sum+=arr[j+1];
-                max=Math.max(max,sum);
             }
             else
             {
@@ -19,10 +18,7 @@ class Solution {
             }
             j++;
         }
-        if(flag==true)
-        {
-            return arr[0];
-        }
-        return max;
+        
+        return Math.max(max,sum);
     }
 }
