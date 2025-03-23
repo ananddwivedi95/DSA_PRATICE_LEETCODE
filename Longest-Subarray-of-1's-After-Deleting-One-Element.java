@@ -1,67 +1,68 @@
 class Solution {
     // public int longestSubarray(int[] arr) {
-    //     int n=arr.length;
-    //      int delt=0;
-    //      int maxCount=0;
-    //      int count=0;
-    //      for(int i=0;i<arr.length;i++)
-    //      {
-    //         if(arr[i]==0)
-    //         {
-    //             count++;
-    //             maxCount=Math.max(maxCount,findMax(arr,i));
-    //         }
-    //      }
-    //      if(count==0)
-    //      {
-    //         return arr.length-1;
-    //      }
-    //      return maxCount;
+    //    int count=0;
+    //    int maxCount=0;
+    //    for(int i=0;i<arr.length;i++)
+    //    {
+
+    //     if(arr[i]==0)
+    //     {
+    //         count++;
+    //         maxCount=Math.max(maxCount,findMax(arr,i));
+    //     }
+    //    } 
+    //    if(count==0)
+    //    {
+    //     return arr.length-1;
+    //    }
+    //    return maxCount;
     // }
-    // static int findMax(int []arr,int delElement)
+    // static int findMax(int[] arr,int deletElement)
     // {
-    //     int oneCount=0;
-    //     int maxSubArray=0;
+    //     int countOne=0;
+    //     int maxOneCount=0;
     //     for(int i=0;i<arr.length;i++)
     //     {
-    //         if(i==delElement)
+    //         if(i==deletElement)
     //         {
-    //             continue;
+    //            continue;
     //         }
     //         else if(arr[i]==1)
     //         {
-    //             oneCount++;
-    //             maxSubArray=Math.max(maxSubArray,oneCount);
+    //             countOne++;
+    //             maxOneCount=Math.max(maxOneCount,countOne);
     //         }
     //         else if(arr[i]==0)
     //         {
-    //             oneCount=0;
+    //             countOne=0;
     //         }
+
     //     }
-    //     return maxSubArray;
+    //     return maxOneCount;
     // }
+
     public int longestSubarray(int[] arr)
-    {      int i=0;
-           int j=0;
-           int countZero=0;
-           int maxSubArray=0;
-           while(j<arr.length)
-           {
+    {
+        int countOne=0;
+        int maxCount=0;
+        int i=0;
+        for(int j=0;j<arr.length;j++)
+        {
             if(arr[j]==0)
             {
-              countZero++;
+              countOne++;
             }
-            while(countZero>1)
+
+            while(countOne>1)
             {
                 if(arr[i]==0)
                 {
-                    countZero--;
+                    countOne--;
                 }
                 i++;
             }
-            maxSubArray=Math.max(maxSubArray,j-i);
-            j++;
-           }
-        return maxSubArray;
+        maxCount=Math.max(maxCount,j-i);
+        }
+        return maxCount;   
     }
 }
