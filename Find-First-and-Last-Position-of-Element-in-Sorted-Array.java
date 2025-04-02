@@ -10,7 +10,7 @@ class Solution {
         result[1]=ub-1;
         return result;
     }
-    static int lowerBound(int[] arr,int target)
+    static int lowerBound(int[] arr, int target)
     {
         int left=0;
         int right=arr.length-1;
@@ -18,20 +18,19 @@ class Solution {
         while(left<=right)
         {
             int mid=left+(right-left)/2;
-            if(target<=arr[mid])
+            if(arr[mid]>=target)
             {
-                result=Math.min(result,mid);
-                right=mid-1;
+              result=Math.min(result,mid);
+              right=mid-1;
             }
-            else if(target>arr[mid])
+            else if(arr[mid]<target)
             {
-                left=mid+1;
+               left=mid+1;
             }
-
         }
         return result;
     }
-    static int upperBound(int[] arr,int target)
+    static int upperBound(int[] arr, int target)
     {
         int left=0;
         int right=arr.length-1;
@@ -39,16 +38,15 @@ class Solution {
         while(left<=right)
         {
             int mid=left+(right-left)/2;
-            if(target<arr[mid])
+            if(arr[mid]>target)
             {
-                result=Math.min(result,mid);
-                right=mid-1;
+              result=Math.min(result,mid);
+              right=mid-1;
             }
-            else if(target>=arr[mid])
+            else if(arr[mid]<=target)
             {
-                left=mid+1;
+               left=mid+1;
             }
-
         }
         return result;
     }
