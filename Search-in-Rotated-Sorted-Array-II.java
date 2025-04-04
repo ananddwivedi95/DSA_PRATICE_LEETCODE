@@ -9,8 +9,8 @@ class Solution {
     }
     static boolean binarySearch(int[] arr,int start,int end,int target)
     {
-        int left=0;
-        int right=arr.length-1;
+        int left=start;
+        int right=end;
       while(left<=right)
       {
         int mid=left+(right-left)/2;
