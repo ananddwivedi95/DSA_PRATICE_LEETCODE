@@ -11,7 +11,7 @@ class Solution {
             if(map.containsKey(num)&&map.get(num)>0)
             {
                 list.add(num);
-                map.put(num,map.get(num)-1);
+                map.put(num,map.get(num)-1); // decrement the frequency form the HashMap do that when next time again this value comes it check after decreamet value means it check how many times it comes
             }
         }
         int [] result= new int[list.size()];
